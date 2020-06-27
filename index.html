@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Roboto+Slab&display=swap" rel="stylesheet"> 
+    <title>Dice</title>
+    <style>
+      body
+      {
+        background-image: url("https://images.unsplash.com/photo-1530305408560-82d13781b33a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60");
+        background-repeat: no-repeat;
+        background-size: cover;
+         width: 100%;
+         height: 100%;
+         position: relative;
+      }
+      .heding
+      {
+        color: red;
+        font-size: 50px;
+        font-weight: bold;
+        font-family: 'Lobster', cursive; 
+      }
+
+        .dice 
+        { 
+            text-align: center; 
+            float: left;
+            margin: 20px; 
+        }
+
+        .butn { 
+            background: #4ecca3; 
+            font-family:  'Roboto Slab', serif;
+            border-radius: 7px; 
+            color: #ffff; 
+            font-size: 30px; 
+            padding: 16px 25px 16px 25px; 
+            text-decoration: none; 
+        } 
+       .player
+       {
+         color: #000;
+       }
+    </style>
+  </head>
+  <body>
+
+    
+      
+     <div class="row">
+       <div class="col-lg-12 text-center">
+         <div class="heding">Welcome to Galloping-dice</div><br>
+         <h1 style="color:#4ecca3 ; font-weight: bold;">
+          Let's Play !!!!!
+         </h1>
+       </div>
+      
+        <div class="col-lg-3"></div>
+       <div class="col-lg-3" style="margin-top: 80px;">
+        <div class="dice" data-aos="zoom-out-up" 
+        data-aos-duration="2000">
+          <h2 class="text-center"  style="color: #d7385e; font-size: 40px; font-family: 'Lobster', cursive; " >
+            Player1
+          </h2>
+          <img  id="img1" src="./images/dice1.png"   class="rounded mx-auto d-block" alt="..." width="250px" height="250px">
+         </div>
+        </div>
+        
+       <div class="col-lg-3" style="margin-top: 80px;">
+        <div class="dice" data-aos="zoom-out-up" 
+        data-aos-duration="2000">
+        <h2 class="text-center" style="color: #d7385e; font-size: 40px; font-family: 'Lobster', cursive; ">
+          Player2
+        </h2>
+        <img  id= "img2" src="./images/dice1.png" class="rounded mx-auto d-block" alt="..." width="250px" height="250px">
+       </div>
+       </div>
+       
+        <div class="col-lg-3"></div>
+         <div class="col-lg-12" style="margin-top: 50px;">
+             <button  onclick="playgame()"  class="butn mx-auto d-block" style="text-align: center;">
+               play the game
+             </button>
+         </div>
+        
+
+     </div>
+
+      <script>
+       function playgame()
+       {
+         var random1=Math.ceil(Math.random()*6);
+         var image1="images/dice"+random1+".png";
+
+         document.getElementById("img1").setAttribute("src",image1);
+
+         var random2=Math.ceil(Math.random()*6);
+         var image2="images/dice"+random2+".png";
+
+         document.getElementById("img2").setAttribute("src",image2);
+
+         if(random1>random2)
+         {
+           document.getElementsByTagName("h1")[0].innerHTML="Player1 won!!";
+         }
+         else if(random1 ===random2)
+         {
+           document.getElementsByTagName("h1")[0].innerHTML="Match draw!!";
+         }
+         else
+         {
+          document.getElementsByTagName("h1")[0].innerHTML="Player2 won!!";
+         }
+
+
+
+       } 
+      </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                 
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+       </script>
+  </body>
+</html>
